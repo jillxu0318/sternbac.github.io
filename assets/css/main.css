@@ -2360,9 +2360,15 @@
 
 /* Headshots */
 
-    .headshot div {
-    	padding: 0em 2em 0em 4em;
+    .headshot {
+    	position: relative;
+    	padding-top: 0.4em;
     }
+
+        .headshot img {
+        	border-radius: 50%;
+    	    width: 50%;
+        }
 
 /* Features */
 
@@ -2385,11 +2391,17 @@
 	}
 
 		.features li {
-			padding: 2em 4em 1em 13em ;
-			display: block;
+			padding-top: 2em;
+			padding-right: 4em;
+			display: flex;
+			flex-direction: row;
 			position: relative;
-			text-align: left;
 			width: 50%;
+		}
+
+		.features .bio {
+			flex-basis: 600px;
+			text-align: left;
 		}
 
 			.features li:nth-child(1) {
@@ -3807,7 +3819,7 @@
 	body.is-mobile.landing #banner,
 	body.is-mobile.landing .wrapper.style4 {
 		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/forest.jpg");
-		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/forestjpg");
+		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/forest.jpg");
 		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/forest.jpg");
 		background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/forest.jpg");
 		background-position: center center;

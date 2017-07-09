@@ -12,8 +12,6 @@ $(document).ready(function() {
         key: API_KEY
     };
 
-    console.log($.param(params));
-
     $.get(GOOGLE_CAL_URL + CALENDAR_ID + '/events?' + $.param(params), function(data) {
         for (var i = 1; i <= 3; i++) {
             $("#eventTitle" + i).text(data.items[i - 1].summary);

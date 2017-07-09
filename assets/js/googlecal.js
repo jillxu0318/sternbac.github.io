@@ -12,6 +12,8 @@ $(document).ready(function() {
         key: API_KEY
     };
 
+    // https://www.googleapis.com/calendar/v3/calendars/analytic@stern.nyu.edu/events?key=AIzaSyABek6rqw9ZTqA9vZLJ84YTA1YG0cgDMWE
+
     $.get(GOOGLE_CAL_URL + CALENDAR_ID + '/events?' + $.param(params), function(data) {
         for (var i = 1; i <= 3; i++) {
             $("#eventTitle" + i).text(data.items[i - 1].summary);

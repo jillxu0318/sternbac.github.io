@@ -38,8 +38,9 @@ $(document).ready(function() {
             $ul = $("#club_events");
             var months = {};
             $.each(data.items, function(index, value) {
-                if (value.start && value.start.dateTime){
-                    var month = new Date(value.start.dateTime).getMonth();
+                if (value.start && (value.start.dateTime || value.start.date)){
+                    var date = value.start.dateTime ? value.start.dateTime : value.start.date;
+                    var month = new Date(date).getMonth();
                     if (months[month] == undefined) {
                         months[month] = [];
                     }

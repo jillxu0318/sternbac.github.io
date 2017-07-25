@@ -34,16 +34,58 @@ $(document).ready(function() {
 
     function populate_calendar_page() {
         $.get(GOOGLE_CAL_URL + CALENDAR_ID + '/events?' + $.param(params), function(data) {
-            console.log(data);
+            //console.log(data);
             $ul = $("#club_events");
+            var months = {};
             $.each(data.items, function(index, value) {
-                var link = value.htmlLink;
-                var name = value.summary;
+                if (value.start && value.start.dateTime){
+                    var month = new Date(value.start.dateTime).getMonth();
+                    if (months[month] == undefined) {
+                        months[month] = [];
+                    }
+
+                    months[month].push(value);
+                }
+            });
+
+            $.each(months, function(key, value) {
                 var li = $("<li></li>");
-                var a = $("<a></a>").attr("href", link).text(name);
+                var a = $("<a></a>").attr("href", "#").text(get_month_name(key)+ " event(s)");
+                a.attr("month", key);
+
+                // register event for the dropdown menu iterm
+                a.click(function() {
+                    hide_all_month_panels();
+                    $("#month_" + a.attr("month")).show();
+                });
 
                 $ul.append(li.append(a));
+
+                var div = $("<div></div>");
+                div.attr("id", "month_" + key);
+                div.addClass("monthPanel");
+
+                $.each(value, function(index, item) {
+                    var h3 = $("<h3></h3>");
+                    h3.text(item.summary);
+                    var p = $("<p></p>");   
+                    p.text(item.description) 
+                    div.append(h3).append(p);                
+                }); 
+
+                div.hide();
+
+                $(".inner").append(div);
             });
         });           
+    }
+
+    function hide_all_month_panels() {
+        $(".monthPanel").hide();
+    }
+
+    function get_month_name(monthNumber) {
+      var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+      return months[monthNumber];
     }
 });

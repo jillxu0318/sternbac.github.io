@@ -27,7 +27,15 @@ $(document).ready(function() {
         $.get(GOOGLE_CAL_URL + CALENDAR_ID + '/events?' + $.param(params), function(data) {
             for (var i = 1; i <= 3; i++) {
                 $("#eventTitle" + i).text(data.items[i - 1].summary);
-                $("#eventDetails" + i).text(data.items[i - 1].description);
+                var start = data.items[i - 1].start;
+                var display = "";
+                if (start.dateTime) {
+                    var dateTime = new Date(start.dateTime);
+                    display = dateTime.toLocaleDateString("en-US") + "  " + dateTime.toLocaleTimeString("en-US");
+                } else if (start.date) {
+                    display = new Date(start.date).toLocaleDateString("en-US");
+                }
+                $("#eventDetails" + i).text(display);
             }
         });
     }

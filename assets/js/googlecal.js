@@ -3,7 +3,7 @@ $(document).ready(function() {
     var API_KEY = 'AIzaSyABek6rqw9ZTqA9vZLJ84YTA1YG0cgDMWE';
     var CALENDAR_ID = 'analytic@stern.nyu.edu';
 
-    var params = { 
+    var params = {
         timeMin: (new Date()).toISOString(),
         showDeleted: false,
         singleEvents: true,
@@ -16,7 +16,7 @@ $(document).ready(function() {
     // if loading page is index.html
     if (top.location.pathname.indexOf('index.html') !== -1) {
         populate_homepage(3);
-    } else if (top.location.pathname.indexOf('calendar.html') !== -1) { 
+    } else if (top.location.pathname.indexOf('calendar.html') !== -1) {
         // if loading page is calendar.html
         populate_calendar_page();
 
@@ -29,7 +29,7 @@ $(document).ready(function() {
                 $("#eventTitle" + i).text(data.items[i - 1].summary);
                 $("#eventDetails" + i).text(data.items[i - 1].description);
             }
-        });           
+        });
     }
 
     function populate_calendar_page() {
@@ -69,16 +69,16 @@ $(document).ready(function() {
                 $.each(value, function(index, item) {
                     var h3 = $("<h3></h3>");
                     h3.text(item.summary);
-                    var p = $("<p></p>");   
-                    p.text(item.description) 
-                    div.append(h3).append(p);                
-                }); 
+                    var p = $("<p></p>");
+                    p.text(item.description)
+                    div.append(h3).append(p);
+                });
 
                 div.hide();
 
                 $(".inner").append(div);
             });
-        });           
+        });
     }
 
     function hide_all_month_panels() {

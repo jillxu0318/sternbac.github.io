@@ -47,7 +47,14 @@ $(document).ready(function() {
                     display +=" - " + dateTime.toLocaleTimeString("en-US", TIME_FORMAT);
                 }
 
-                $("#eventDetails" + i).text(display);
+                var loc = data.items[i - 1].location;
+                if (loc) {
+                    display += "\nLocation: " + loc;
+                }
+
+                var eventDetails = $("#eventDetails" + i);
+                eventDetails.text(display);
+                eventDetails.html(eventDetails.html().replace(/\n/g,'<br/>'));
             }
         });
     }

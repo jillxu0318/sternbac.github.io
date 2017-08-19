@@ -27,33 +27,38 @@ $(document).ready(function() {
 
     }
 
+    function create_datetime_location(event) {
+        var start = event.start;
+        var result = "";
+        if (start.dateTime) {
+            var dateTime = new Date(start.dateTime);
+            result = dateTime.toLocaleDateString("en-US") + "  " + dateTime.toLocaleTimeString("en-US", TIME_FORMAT);
+        } else if (start.date) {
+            result = new Date(start.date).toLocaleDateString("en-US");
+        }
+
+        var end = event.end;
+        if (end.dateTime) {
+            var dateTime = new Date(end.dateTime);
+            result +=" - " + dateTime.toLocaleTimeString("en-US", TIME_FORMAT);
+        }
+
+        var loc = event.location;
+        if (loc) {
+            result += "\nLocation: " + loc;
+        }
+
+        return result;
+    }
+
     function populate_homepage(count) {
         params.maxResults = count;
         $.get(GOOGLE_CAL_URL + CALENDAR_ID + '/events?' + $.param(params), function(data) {
             for (var i = 1; i <= 3; i++) {
-                $("#eventTitle" + i).text(data.items[i - 1].summary);
-                var start = data.items[i - 1].start;
-                var display = "";
-                if (start.dateTime) {
-                    var dateTime = new Date(start.dateTime);
-                    display = dateTime.toLocaleDateString("en-US") + "  " + dateTime.toLocaleTimeString("en-US", TIME_FORMAT);
-                } else if (start.date) {
-                    display = new Date(start.date).toLocaleDateString("en-US");
-                }
-
-                var end = data.items[i - 1].end;
-                if (end.dateTime) {
-                    var dateTime = new Date(end.dateTime);
-                    display +=" - " + dateTime.toLocaleTimeString("en-US", TIME_FORMAT);
-                }
-
-                var loc = data.items[i - 1].location;
-                if (loc) {
-                    display += "\nLocation: " + loc;
-                }
-
+                var event = data.items[i - 1];
+                $("#eventTitle" + i).text(event.summary);
                 var eventDetails = $("#eventDetails" + i);
-                eventDetails.text(display);
+                eventDetails.text(create_datetime_location(event));
                 eventDetails.html(eventDetails.html().replace(/\n/g,'<br/>'));
             }
         });
@@ -96,9 +101,10 @@ $(document).ready(function() {
                 $.each(value, function(index, item) {
                     var h3 = $("<h3></h3>");
                     h3.text(item.summary);
-                    var p = $("<p></p>");
-                    p.text(item.description)
-                    div.append(h3).append(p);
+
+                    var desc = $("<p></p>");
+                    desc.text(item.description)
+                    div.append(h3).append(desc);
                 });
 
                 div.hide();

@@ -3,6 +3,11 @@ $(document).ready(function() {
     var API_KEY = 'AIzaSyABek6rqw9ZTqA9vZLJ84YTA1YG0cgDMWE';
     var CALENDAR_ID = 'analytic@stern.nyu.edu';
 
+    var TIME_FORMAT = {
+        hour: '2-digit',
+        minute:'2-digit'
+    };
+
     var params = {
         timeMin: (new Date()).toISOString(),
         showDeleted: false,
@@ -31,10 +36,17 @@ $(document).ready(function() {
                 var display = "";
                 if (start.dateTime) {
                     var dateTime = new Date(start.dateTime);
-                    display = dateTime.toLocaleDateString("en-US") + "  " + dateTime.toLocaleTimeString("en-US");
+                    display = dateTime.toLocaleDateString("en-US") + "  " + dateTime.toLocaleTimeString("en-US", TIME_FORMAT);
                 } else if (start.date) {
                     display = new Date(start.date).toLocaleDateString("en-US");
                 }
+
+                var end = data.items[i - 1].end;
+                if (end.dateTime) {
+                    var dateTime = new Date(end.dateTime);
+                    display +=" - " + dateTime.toLocaleTimeString("en-US", TIME_FORMAT);
+                }
+
                 $("#eventDetails" + i).text(display);
             }
         });

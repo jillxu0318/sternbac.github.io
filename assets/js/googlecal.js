@@ -59,7 +59,7 @@ $(document).ready(function() {
                 $("#eventTitle" + i).text(event.summary);
                 var eventDetails = $("#eventDetails" + i);
                 eventDetails.text(create_datetime_location(event));
-                eventDetails.html(eventDetails.html().replace(/\n/g,'<br/>'));
+                convert_newline(eventDetails);
             }
         });
     }
@@ -102,9 +102,12 @@ $(document).ready(function() {
                     var h3 = $("<h3></h3>");
                     h3.text(item.summary);
 
+                    var datetime_loc = $("<p></p>");
+                    datetime_loc.text(create_datetime_location(item));
+
                     var desc = $("<p></p>");
                     desc.text(item.description)
-                    div.append(h3).append(desc);
+                    div.append(h3).append(convert_newline(datetime_loc)).append(desc);
                 });
 
                 div.hide();
@@ -112,6 +115,10 @@ $(document).ready(function() {
                 $(".inner").append(div);
             });
         });
+    }
+
+    function convert_newline(item) {
+        return item.html(item.html().replace(/\n/g,'<br/>'));
     }
 
     function hide_all_month_panels() {

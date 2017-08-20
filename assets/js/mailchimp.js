@@ -4,11 +4,13 @@ $(document).ready(function() {
     var LIST_ID = 'c842a239db';
 
     $('#subEmailButton').click(function() {
+
+        var email = $('#subEmail').val();
         var data = {
             "apikey": APIKEY,
             "id": LIST_ID,
             "email": {
-                "email": "jillxu10@gmail.com"
+                "email": email
             },
             "send_welcome": true
         }

@@ -172,10 +172,29 @@ $(document).ready(function() {
                 // redraw with events
                 draw_treeview();
 
+                $('#fall-tree').on('nodeSelected', function(event, data) {
+                    show_event_details($(".inner"), data.data);
+                });
+
+                $('#spring-tree').on('nodeSelected', function(event, data) {
+                    show_event_details($(".inner"), data.data); 
+                });
+
             });
         });
     }
 
+    function show_event_details(div, event) {
+        var h3 = $("<h3></h3>");
+        h3.text(event.summary);
+
+        var datetime_loc = $("<p></p>");
+        datetime_loc.text(create_datetime_location(event));
+
+        var desc = $("<p></p>");
+        desc.text(event.description)
+        div.append(h3).append(convert_newline(datetime_loc)).append(desc);
+    }
 
     function draw_treeview() {
 
@@ -204,7 +223,8 @@ $(document).ready(function() {
         monthNode.nodes = monthNode.nodes || [];
 
         var eventNode = {
-            text: event.summary
+            text: event.summary,
+            data: event
         };
 
         monthNode.nodes.push(eventNode);       

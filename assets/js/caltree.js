@@ -193,6 +193,7 @@ $(document).ready(function() {
 
         var desc = $("<p></p>");
         desc.text(event.description)
+        div.empty();
         div.append(h3).append(convert_newline(datetime_loc)).append(desc);
     }
 

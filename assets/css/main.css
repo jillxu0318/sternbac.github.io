@@ -3136,7 +3136,7 @@
 		@media screen and (max-width: 980px) {
 
 			.wrapper {
-				padding: 10em 10em 10em 10em ;
+				
 			}
 
 		}
@@ -3157,7 +3157,7 @@
 		-ms-transition: opacity 0.5s ease;
 		transition: opacity 0.5s ease;
 		opacity: 1;
-		padding-top: 3em;
+
 	}
 
 		#page-wrapper:before {

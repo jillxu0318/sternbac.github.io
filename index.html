@@ -46,7 +46,9 @@
 							<p>Bringing business analytics<br />
 							to Stern since 2015</p>
 							<ul class="actions">
+								<div id = "subscribeButton">
 								<li><a href="#" class="button special">Sign Up</a></li>
+							</div>
 							</ul>
 						</div>
 						<a href="#one" class="more scrolly">Learn More</a>
@@ -186,9 +188,11 @@
 				<!-- CTA -->
 					<section id="cta" class="wrapper style4">
 						<div class="inner">
+							<div id="bottom">
 							<header>
-								<input id="subEmail" type="text" size="45" placeholder="Sign up for our mailing list! Enter your email here.">
+								<input id="subEmail" type="text" size="45" placeholder="Enter email">
 							</header>
+						</div>
 							<ul class="actions vertical">
 								<li><a id="subEmailButton" href="#" class="button fit special">Subscribe</a></li>
 							</ul>
@@ -221,5 +225,9 @@
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/googlecal.js"></script>
 			<script src="assets/js/mailchimp.js"></script>
+			<script>$("div#subscribeButton").click(function() {
+ 			$('html, body').animate({
+     	scrollTop: $("div#bottom").offset().top   }, 1000);
+ 			});</script>
 	</body>
 </html>

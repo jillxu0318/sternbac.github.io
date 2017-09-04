@@ -22,9 +22,18 @@ var docTree = [
 ];
 
 $(document).ready(function() {
+    var theTree = $('#doc-tree');
 
-    $('#doc-tree').treeview({
-        data: docTree,
-        enableLinks: true
+    theTree.treeview({
+        data: docTree
+    });
+
+    theTree.on('nodeSelected', function(event, data) {
+      // Selected
+      if (data.nodeId == 0) {
+        $(this).treeview('expandAll', { silent: true });
+      } else {
+        window.open(data.href);
+      }
     });
 });

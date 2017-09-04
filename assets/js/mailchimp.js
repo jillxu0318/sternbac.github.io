@@ -22,9 +22,9 @@ $(document).ready(function() {
             dataType: 'json',
             async: false,
             data: data,
-            success: function (){
-                alert('Thanks for your comment!');
-            }
+            complete: function() {
+                alert('Thank you! Please check your email to confirm your subscription.');
+            }            
         });
     });
 });

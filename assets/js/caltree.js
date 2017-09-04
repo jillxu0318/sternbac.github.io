@@ -177,7 +177,7 @@ $(document).ready(function() {
                 });
 
                 $('#spring-tree').on('nodeSelected', function(event, data) {
-                    show_event_details($(".inner"), data.data); 
+                    show_event_details($(".inner"), data.data);
                 });
 
             });
@@ -219,7 +219,7 @@ $(document).ready(function() {
         if (month >= 1 && month <= 4) { // belongs to spring tree
             index = month - 1;
             monthNode = springTree[0].nodes[index];
-        }     
+        }
 
         monthNode.nodes = monthNode.nodes || [];
 
@@ -228,7 +228,7 @@ $(document).ready(function() {
             data: event
         };
 
-        monthNode.nodes.push(eventNode);       
+        monthNode.nodes.push(eventNode);
     }
 
     function convert_newline(item) {

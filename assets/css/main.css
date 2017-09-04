@@ -2635,7 +2635,7 @@
 
 		.wrapper > .inner {
 			width: auto;
-			margin: 0 auto;
+			margin: auto;
 		}
 
 			@media screen and (max-width: 1280px) {
@@ -2972,6 +2972,8 @@
 
 		.wrapper.style4 {
 			background-color: transparent;
+			padding-left: 100px;
+			padding-right: 100px;
 		}
 
 		.wrapper.style5 {
@@ -3120,7 +3122,7 @@
 					background-color: rgba(0, 0, 0, 0.1);
 				}
 
-				.wrapper.style6 {
+			.wrapper.style6 {
 					background-color: #ffffff;
 					color: #000000;
 				}
@@ -3136,7 +3138,7 @@
 		@media screen and (max-width: 980px) {
 
 			.wrapper {
-				
+
 			}
 
 		}
@@ -3149,6 +3151,14 @@
 
 		}
 
+		.wrapper.style7 {
+			background-color: #ffffff;
+			color: #4E4852;
+			padding-top: 0px;
+		}
+		.wrapper.style7 h2, .wrapper.style7 h3, .wrapper.style7 h4, .wrapper.style7 h5, .wrapper.style7 h6 {
+			color: #2E3842;
+		}
 /* Page Wrapper + Menu */
 
 	#page-wrapper {

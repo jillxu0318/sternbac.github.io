@@ -2642,7 +2642,7 @@
 			@media screen and (max-width: 1280px) {
 
 				.wrapper > .inner {
-					width: 50%;
+					width: auto;
 				}
 
 			}

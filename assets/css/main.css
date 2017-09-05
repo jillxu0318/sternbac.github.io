@@ -2630,18 +2630,19 @@
 /* Wrapper */
 
 	.wrapper {
-		padding: 6em 0 4em 0 ;
+		padding: 3em 0 2em 0 ;
 	}
 
 		.wrapper > .inner {
-			width: 60em;
-			margin: 0 auto;
+			width: 55%;
+			margin: auto;
+			display: block;
 		}
 
 			@media screen and (max-width: 1280px) {
 
 				.wrapper > .inner {
-					width: 90%;
+					width: auto;
 				}
 
 			}
@@ -2649,10 +2650,19 @@
 			@media screen and (max-width: 980px) {
 
 				.wrapper > .inner {
-					width: 100%;
+					width: 40%;
 				}
 
 			}
+            @media screen and (max-width: 480px) {
+
+				.wrapper > .inner {
+					width: 100%;
+                    align-content: center;
+				}
+
+			}
+
 
 		.wrapper.alt {
 			padding: 0;
@@ -2972,6 +2982,8 @@
 
 		.wrapper.style4 {
 			background-color: transparent;
+			padding-left: 100px;
+			padding-right: 100px;
 		}
 
 		.wrapper.style5 {
@@ -3120,6 +3132,11 @@
 					background-color: rgba(0, 0, 0, 0.1);
 				}
 
+			.wrapper.style6 {
+					background-color: #ffffff;
+					color: #000000;
+				}
+
 			@media screen and (max-width: 736px) {
 
 				.wrapper.style5 .features li {
@@ -3131,7 +3148,7 @@
 		@media screen and (max-width: 980px) {
 
 			.wrapper {
-				padding: 4em 3em 2em 3em ;
+
 			}
 
 		}
@@ -3144,6 +3161,54 @@
 
 		}
 
+		.wrapper.style7 {
+			background-color: #ffffff;
+			color: #4E4852;
+			padding-top: 40px;
+		}
+		.wrapper.style7 h2, .wrapper.style7 h3, .wrapper.style7 h4, .wrapper.style7 h5, .wrapper.style7 h6 {
+			color: #2E3842;
+		}
+
+		.wrapper.style8 {
+			background-color: #2e3842;
+			padding-left: 320px;
+			padding-right: 320px;
+			padding-bottom: 0px;
+		}
+
+		.wrapper.style9 {
+			background-color: #2e3842;
+			color: #2e3842;
+			padding-left: 0px;
+			padding-right: 0px;
+			padding-top: 0px;
+		}
+		@media screen and (max-width: 736px) {
+
+			.wrapper.style9 .features li {
+				border-top-color: #dfdfdf;
+			}
+
+		}
+
+	@media screen and (max-width: 980px) {
+
+		.wrapper {
+
+		}
+
+	}
+
+	@media screen and (max-width: 736px) {
+
+		.wrapper {
+			padding: 3em 2em 1em 2em ;
+		}
+
+	}
+
+
 /* Page Wrapper + Menu */
 
 	#page-wrapper {
@@ -3152,7 +3217,7 @@
 		-ms-transition: opacity 0.5s ease;
 		transition: opacity 0.5s ease;
 		opacity: 1;
-		padding-top: 3em;
+
 	}
 
 		#page-wrapper:before {
@@ -3646,7 +3711,7 @@
 /* Main */
 
 	#main > header {
-		padding: 12em 0 10em 0 ;
+		padding: 14em 0 12em 0 ;
 		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/forest.jpg");
 		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/forest.jpg");
 		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/forest.jpg");

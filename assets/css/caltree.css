@@ -1,0 +1,18 @@
+.float-top {
+    padding-top: 50px;
+}
+
+.clearfix {
+    overflow: auto;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.column {
+    float: left;
+    padding-left: 5%;
+}

@@ -2,7 +2,7 @@ var docTree = [
     {
         text: "Spring 2017",
         state: {
-            expanded: true
+            expanded: false
         },
         nodes: [
             {

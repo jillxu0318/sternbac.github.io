@@ -3164,11 +3164,51 @@
 		.wrapper.style7 {
 			background-color: #ffffff;
 			color: #4E4852;
-			padding-top: 0px;
+			padding-top: 40px;
 		}
 		.wrapper.style7 h2, .wrapper.style7 h3, .wrapper.style7 h4, .wrapper.style7 h5, .wrapper.style7 h6 {
 			color: #2E3842;
 		}
+
+		.wrapper.style8 {
+			background-color: #2e3842;
+			padding-left: 320px;
+			padding-right: 320px;
+			padding-bottom: 0px;
+		}
+
+		.wrapper.style9 {
+			background-color: #2e3842;
+			color: #2e3842;
+			padding-left: 0px;
+			padding-right: 0px;
+			padding-top: 0px;
+		}
+		@media screen and (max-width: 736px) {
+
+			.wrapper.style9 .features li {
+				border-top-color: #dfdfdf;
+			}
+
+		}
+
+	@media screen and (max-width: 980px) {
+
+		.wrapper {
+
+		}
+
+	}
+
+	@media screen and (max-width: 736px) {
+
+		.wrapper {
+			padding: 3em 2em 1em 2em ;
+		}
+
+	}
+
+
 /* Page Wrapper + Menu */
 
 	#page-wrapper {

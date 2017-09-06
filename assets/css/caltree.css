@@ -16,3 +16,8 @@
     float: left;
     padding-left: 5%;
 }
+
+.wrapper > .inner {
+    width: 55%;
+}
+

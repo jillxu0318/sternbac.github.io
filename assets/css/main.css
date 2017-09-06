@@ -2989,6 +2989,7 @@
 		.wrapper.style5 {
 			background-color: #ffffff;
 			color: #4E4852;
+            
 		}
 
 			.wrapper.style5 strong, .wrapper.style5 b {
@@ -3172,9 +3173,18 @@
 
 		.wrapper.style8 {
 			background-color: #2e3842;
-			padding-left: 320px;
-			padding-right: 320px;
+			padding-left: 350px;
+			padding-right: 350px;
 			padding-bottom: 0px;
+		}
+
+        @media screen and (max-width: 480px) {
+
+			.wrapper.style8 {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
 		}
 
 		.wrapper.style9 {
@@ -3711,7 +3721,7 @@
 /* Main */
 
 	#main > header {
-		padding: 14em 0 12em 0 ;
+		padding: 20em 0 18em 0 ;
 		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/forest.jpg");
 		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/forest.jpg");
 		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/forest.jpg");

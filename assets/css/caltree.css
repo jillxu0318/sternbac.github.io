@@ -18,6 +18,19 @@
 }
 
 .wrapper > .inner {
-    width: 55%;
+    
 }
 
+@media screen and (min-width: 480px)
+main.css:2659
+.wrapper > .inner {
+    width: 55%;
+    align-content: center;
+}
+
+@media screen and (max-width: 480px)
+main.css:2659
+.wrapper > .inner {
+    width: 100%;
+    align-content: center;
+}

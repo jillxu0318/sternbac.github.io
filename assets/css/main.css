@@ -2633,12 +2633,15 @@
 		padding: 3em 0 2em 0 ;
 	}
 
+/*
 		.wrapper > .inner {
 			width: 55%;
 			margin: auto;
 			display: block;
 		}
+*/
 
+/*
 			@media screen and (max-width: 1280px) {
 
 				.wrapper > .inner {
@@ -2662,6 +2665,7 @@
 				}
 
 			}
+*/
 
 
 		.wrapper.alt {

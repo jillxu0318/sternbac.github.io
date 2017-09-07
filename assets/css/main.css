@@ -3193,10 +3193,10 @@
 
 		.wrapper.style9 {
 			background-color: #2e3842;
-			color: #2e3842;
-			padding-left: 0px;
-			padding-right: 0px;
-			padding-top: 0px;
+			color: #ffffff;
+			padding-left: 40px;
+			padding-right: 40px;
+			padding-top: 30px;
 		}
 		@media screen and (max-width: 736px) {
 
@@ -3221,7 +3221,13 @@
 		}
 
 	}
-
+		.wrapper.style10 {
+			background-color: #2e3842;
+			color: #2e3842;
+			padding-left: 0px;
+			padding-right: 0px;
+			padding-top: 0px;
+		}
 
 /* Page Wrapper + Menu */
 
@@ -3765,7 +3771,7 @@
 		@media screen and (max-width: 1280px) {
 
 			#main > header {
-				padding: 8em 3em 6em 3em ;
+				padding: 10em 3em 8em 3em ;
 			}
 
 		}

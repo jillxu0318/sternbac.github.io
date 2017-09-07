@@ -22,6 +22,12 @@ $(document).ready(function() {
             dataType: 'json',
             async: false,
             data: data,
+            success: function(result, status, xhr){
+                alert(result + ": " + status);
+            },
+            error: function(xhr, status, err) {
+                alert(status + ": " + err);
+            },
             complete: function() {
                 alert('Thank you! Please check your email to confirm your subscription.');
             }            

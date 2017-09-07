@@ -2986,8 +2986,8 @@
 
 		.wrapper.style4 {
 			background-color: transparent;
-			padding-left: 100px;
-			padding-right: 100px;
+            margin: auto;
+            width: 50%;
 		}
 
 		.wrapper.style5 {
@@ -3698,6 +3698,7 @@
 			#cta .inner {
 				display: block;
 				text-align: center;
+                width: 100%;
 			}
 
 				#cta .inner header {
@@ -3904,6 +3905,7 @@
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: cover;
+        width: 100%;
 	}
 
 	body.is-mobile.landing #footer {

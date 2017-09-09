@@ -1,30 +1,32 @@
 $(document).ready(function() {
-    var MAIL_CHIMP_URL = 'https://us9.api.mailchimp.com/2.0/lists/subscribe.json';
-    var APIKEY = 'd4f45a0243283ba544e52482cde26eed-us9';
-    var LIST_ID = 'c842a239db';
+    var MAIL_CHIMP_PROXY_URL = 'https://mail-chimp.herokuapp.com/subscribe';
 
     $('#subEmailButton').click(function() {
 
         var email = $('#subEmail').val();
         var data = {
-            "apikey": APIKEY,
-            "id": LIST_ID,
-            "email": {
-                "email": email
-            },
-            "send_welcome": true
+            email: email
         }
 
         $.ajax
         ({
             type: "POST",
-            url: MAIL_CHIMP_URL,
+            url: MAIL_CHIMP_PROXY_URL,
             dataType: 'json',
             async: false,
             data: data,
-            complete: function() {
+            // error: function (jqXHR, status, err) {
+            //     alert(err);
+            // },
+            // success: function() {
+            //     alert('Thank you! Please check your email to confirm your subscription.');
+            // },
+            // complete: function (jqXHR, status) {
+            //     console.log(status);
+            // }
+            complete: function (jqXHR, status) {
                 alert('Thank you! Please check your email to confirm your subscription.');
-            }            
+            }
         });
     });
 });
